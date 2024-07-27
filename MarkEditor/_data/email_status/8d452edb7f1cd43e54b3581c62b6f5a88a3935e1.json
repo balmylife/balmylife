@@ -1,0 +1,28 @@
+{
+    "status": "ok", 
+    "mail_id": "01000175fe5a8479-20410d4f-b086-4f8c-b9bb-225d8c506833-000000", 
+    "raw": true, 
+    "sender": "Bitcron Mail <bee@bitcron.com>", 
+    "node_ip": "192.95.36.177", 
+    "doc_uuid": "8d452edb7f1cd43e54b3581c62b6f5a88a3935e1", 
+    "original_mail_id": "ah4ohvbjlfqs2n14pt9q3ru2k10gguf8gh6tvo81", 
+    "content": "Content-Type: text/plain; charset=utf-8\nContent-Transfer-Encoding: quoted-printable\nMime-Version: 1.0 (1.0)\nSubject: Re: balmy  \nTo: <balmylife@qq.com>\n\nRead\r\n\r\n> =E5=9C=A8 2020=E5=B9=B411=E6=9C=8825=E6=97=A5=EF=BC=8C15:32=EF=BC=8Cbee@bi=\r\ntcron.com =E5=86=99=E9=81=93=EF=BC=9A\r\n>=20\r\n> =EF=BB=BF\r\n> life\r\n\r\n", 
+    "cloud_file_date": {
+        "$date": 1606290146577
+    }, 
+    "date": {
+        "$date": 1606290146577
+    }, 
+    "title": "Re: balmy <refer:_inbox/2020-11/2020-11-25 15-32-36.md> <from:balmylife@qq.com>", 
+    "delivery_status": {
+        "remoteMtaIp": "203.205.219.57", 
+        "recipients": [
+            "balmylife@qq.com"
+        ], 
+        "timestamp": "2020-11-25T07:42:28.719Z", 
+        "smtpResponse": "250 Ok: queued as ", 
+        "reportingMTA": "a8-43.smtp-out.amazonses.com", 
+        "processingTimeMillis": 2294
+    }, 
+    "to": "balmylife@qq.com"
+}

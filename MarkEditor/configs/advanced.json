@@ -1,0 +1,28 @@
+{
+    "anti_theft_chain":true,
+    "ssl_certificate_key":"",
+    "utc_offset":8.0,
+    "sync_to_cloud":true,
+    "main_domain":"",
+    "dashboard_time":1615096901943,
+    "ssl_certificate":"",
+    "cache_strategy":"fast",
+    "sync_from_cloud":true,
+    "cloud_space":"",
+    "visitor_password":"",
+    "admin_name":"",
+    "license_function":"",
+    "force_ssl":true,
+    "domains":[
+
+    ],
+    "dns_mx":[
+
+    ],
+    "visitor_contacts":"",
+    "single_domain":"",
+    "disable_robots":true,
+    "dns_txt":[
+
+    ]
+}

@@ -1,0 +1,68 @@
+---
+date: 2019-10-24 15:50
+layout: 'post'
+status: 'public'
+---
+
+##   数据中心网络及SDN方向    (physical to Application)
+
+企业云化 
+
+security    &    desire
+
+一次性交互  永久性部署
+
+sidecar         extender    
+overlay
+underlay
+
+
+SDN 
+Network  Insight     |    vRealize Automation
+
+SDDC    Nisirar      Micro...
+
+
+##    NSX-T Data Center  constructure & component
+manager level
+control level
+data level
+private & public CLOUD
+
+
+multi-cloud    Auto    micro - pieces
+
+
+Application    NSX Terminal sercurity constructure     NSX Distrubute Firewall DFW    NSX Advanced network security constructure  NI   
+
+Three keys  of cloud enviroment
+
+Cloud    NCP Plugin    NSX
+
+VM    container    NSX virtual distrubuted  switch     ESX/KVM
+
+CSM Manager    Install    NSX Public cloud gateway...
+
+my billing app needs to access the internet    ()         declarative interface    imperative interface
+
+
+##    NSX  Intelligence   (security analysis、network analysis 、performance、...)  
+
+NSX Intelligence Engine        (NSX Manager、 NSX Data Platform)    
+
+spark
+druid
+kafka
+elasticserch
+
+Advantages:
+1.    Through NSX Manager  to  simplified (Hypervisor)
+2.    ...
+
+NSX    Advanced      LB-
+
+separate control & data plane
+
+multi-cloud        intelligence        automation
+
+NSX Hybird connect    to    VMware cloud destination (NO DISRUPT)

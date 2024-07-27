@@ -1,0 +1,28 @@
+{
+    "status": "ok", 
+    "mail_id": "01000175fe59d4c6-d9129ccb-7946-447d-ab2c-af1875aa2e2d-000000", 
+    "raw": true, 
+    "sender": "Bitcron Mail <bee@bitcron.com>", 
+    "node_ip": "192.95.36.177", 
+    "doc_uuid": "9edee82d958876cf19fe1ae67b75c3c661979fe4", 
+    "original_mail_id": "ihhvacbj0l78buftd77ct0ruqcp7m2ko8ff4osg1", 
+    "content": "MIME-Version: 1.0\nContent-Type: multipart/alternative; boundary=\"000000000000b77cb705b4e98ec7\"\nSubject: balmy <refer:_inbox/2020-11/2020-11-25 15-41-40.md>\n <from:houricon@gmail.com>\nTo: <balmylife@126.com>\n\n--000000000000b77cb705b4e98ec7\nContent-Type: text/plain; charset=\"UTF-8\"\n\nlife\r\n\n--000000000000b77cb705b4e98ec7\nContent-Type: text/html; charset=\"UTF-8\"\n\n<div dir=\"ltr\">life</div>\r\n\n--000000000000b77cb705b4e98ec7--\n", 
+    "cloud_file_date": {
+        "$date": 1606290101567
+    }, 
+    "date": {
+        "$date": 1606290101567
+    }, 
+    "title": "balmy", 
+    "delivery_status": {
+        "remoteMtaIp": "220.181.15.202", 
+        "recipients": [
+            "balmylife@126.com"
+        ], 
+        "timestamp": "2020-11-25T07:41:48.832Z", 
+        "smtpResponse": "250 Mail OK queued as mx28,ysmowABHo424Cr5f4F7mCQ--.8565S3 1606290108", 
+        "reportingMTA": "a8-92.smtp-out.amazonses.com", 
+        "processingTimeMillis": 7386
+    }, 
+    "to": "balmylife@126.com"
+}

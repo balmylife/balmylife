@@ -1,0 +1,18 @@
+{
+    "inject_template":"<!-- Global site tag (gtag.js) - Google Analytics -->\n<script async src=\"https:\/\/www.googletagmanager.com\/gtag\/js?id=G-QJHG9VXYRN\"><\/script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'G-QJHG9VXYRN');\n<\/script>",
+    "third_party_comments_script":"<div class=\"disqus_btn\">\u70b9\u51fb\u52a0\u8f7dDisqus<\/div>\n\n  <div id=\"disqus_thread\"><\/div>\n\n  <style type=\"text\/css\">.disqus_btn {\n    cursor: pointer;\n    border: 1px dashed #ddd;\n    border-radius: 8px;\n    color: #aaa;\n    margin: 1rem auto;\n    padding: 10px 1rem;\n    transition: 0.5s;\n    font-size:0.9em;\n    text-align:center;\n}\n.disqus_btn:hover {\n    color: #333;\n}\n\n<\/style>\n\n<\/div>\n\n\n<script>$(document).ready(function() {\n    $('.disqus_btn').on('click', function(){\n        var disqus_shortname = 'balmy';\n        \/\/ ajax request to load the disqus javascript\n        $.ajax({\n            type: \"GET\",\n            url: \"\/\/\" + disqus_shortname + \".disqus.com\/embed.js\",\n            dataType: \"script\",\n            cache: true\n        });\n        \/\/ hide the button once comments load\n        $(this).fadeOut();\n    });\n});\n<\/script>",
+    "dashboard_time":1615093736745,
+    "debug_template":false,
+    "comments_type":"tree",
+    "theme":"",
+    "gravatar":false,
+    "routes":[
+        {
+            "route_root":"album",
+            "route_url":"album",
+            "route_theme":"Album\/waterfall"
+        }
+    ],
+    "auto_reload":false,
+    "hide_comments":false
+}

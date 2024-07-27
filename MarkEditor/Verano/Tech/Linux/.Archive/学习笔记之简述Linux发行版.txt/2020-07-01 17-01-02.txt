@@ -1,0 +1,628 @@
+---
+date: 2017-11-07 19:25
+layout: 'post'
+status: 'public'
+---
+
+##一、小述Linux发行版
+[linux发行版](http://s4.51cto.com/wyfs02/M02/8B/A5/wKiom1hTkq3hv5mrAAB8Lyr4T9A773.jpg-wh_500x0-wm_3-wmp_4-s_871971689.jpg)
+由于Linux基于OpenOS的原则，任何人都可以获取源其内核源代码，因此也有了众多发行版，其中Linux最主要的三个分支分别是Debian、Slackware、RedHat。
+下面分别介绍下三大主流发行版及其衍生版：
+    1、Debian：Debian Project诞生于1993年8月13日，它的目标是提供一个稳定容错的Linux版本。使用于任何环境，由于系统稳定，多用于服务器。支持Debian的不是某家公司，而是互联网上自发组织起来进行更新和发布的，是最为原汁原味的OS，对于使用者要求较高。
+    Ubuntu是基于Debian的桌面环境的发行版，每六个月发行一次新的版本 。
+    Mint是一份基于Ubuntu的发行版，其目标是提供一种更完整的即刻可用体验，这包括提供浏览器插件、多媒体编解码器、对DVD播放的支持、Java和其他组件。它与Ubuntu软件仓库兼容。 Mint 是一个专为pc和X86电脑设计的操作系统。
+
+    2、Slackware：最早古老的Linux发行版，主要用于桌面、工作站、服务器，采用的默认桌面是KED。
+    SUSE是基于Slackware的一款Linux发行版，主要用于商业桌面、服务器。欧洲市场最为流行，中途经多次被收购，发展较为缓慢。
+    OpenSUSE由SUSE发展而来，同上被收购，主要用于桌面环境。
+
+    3、RedHat：自从Red Hat 9.0版本发布后，Red Hat公司就不再开发桌面版的发行版，04年后对Red Hat 9.0不提供技术支持，后专做服务器操作系统Red Hat EnterpriseLinux，每十八个月发行一个新版本，内核相对较低。不求最新，但求最稳。
+    CentOS（Community ENTerprise Operating System）是Linux发行版之一，它是来自于Red Hat Enterprise Linux依照开放源代码规定释出的源代码所编译而成。由于出自同样的源代码，因此有些要求高度稳定性的服务器以CentOS替代商业版的Red HatEnterprise Linux使用。两者的不同，在于CentOS并不包含封闭源代码软件,CentOS 是一个基于Red Hat Linux 提供的可自由使用源代码的企业级Linux发行版本。每个版本的 CentOS都会获得十年的支持（通过安全更新方式）。新版本的 CentOS 大约每两年发行一次，而每个版本的 CentOS 会定期（大概每六个月）更新一次，以便支持新的硬件。这样，建立一个稳定、安全、低维护、高预测性、高重复性的 Linux 环境。CentOS 是RHEL（Red HatEnterprise Linux）源代码再编译的产物，而且在RHEL的基础上修正了不少已知的 Bug ，相对于其他 Linux 发行版，其稳定性值得信赖。RHEL 在发行的时候，有两种方式。一种是二进制的发行方式，另外一种是源代码的发行方式。
+    Fedora是众多 Linux 发行版之一。它是一套从Red Hat Linux发展出来的免费Linux系统。Fedora Core 的前身就是Red Hat Linux。Fedora是一个开放的、创新的、前瞻性的操作系统和平台，基于Linux。它允许任何人自由地使用、修改和重发布，无论现在还是将来。它由一个强大的社群开发，这个社群的成员以自己的不懈努力，提供并维护自由、开放源码的软件和开放的标准。
+
+Tips：Linux发行版众多，但是实际上只有一个内核，发行版只是给这个内核加上一些应用程序而组成的系统。而这些应用大部分都是来源于GNU社区，代码基本都一样，因此，各发行版之间差别不大。
+
+ 
+
+##二、Linux系统命令使用格式（基于CentOS7.X）
+
+```
+ifconfig、echo、tty、startx、export、pwd、history、shutdown、poweroff、reboot、hwclock、date
+```
+
+1、ifconfig
+```
+网络配置命令
+       此命令在较新版本中被ip命令所取代，CentOS默认是未安装的如需安装可运行如下命令即可：
+```
+    [](http://s5.51cto.com/wyfs02/M01/8B/A2/wKioL1hTktjhZOUsAAAKZiNYc7o057.jpg)
+
+         不带参数的ifconfig命令可以显示当前启动的网络接口信息。命令格式如下：
+```
+ inconfig[EQUIPMENTNAME][PARAMETER]
+       -up|down启用或禁用网卡                     例：ifconfig eth0 up
+       -a显示全部接口信息                                
+       -s显示摘要信息  
+       -arp                                    例：ifconfig eth0 arp        启用ARP协议
+                                                  例：ifconfig eth0 - arp      关闭ARP协议
+       netmask<NETMASK>设置网卡的子网掩码
+       例：ifconfig eth0 192.168.0.1 netmask255.255.255.0
+```
+
+2、echo
+```
+文字提示作用，命令格式如下：
+       echo[-n ]字符串
+       -n：带参数的输出文字不换行
+       -e:   转译字符功能
+```
+
+3、tty
+```
+       显示当前连接的终端设备名称。
+```
+
+4、startx
+```
+       功能是启动X Window服务的，实际上启动XWindow的程序是xinit。
+```
+
+5、export
+```
+ 设置或显示环境变量，命令格式如下：
+         export[-fnp][NAME]=[VALUE]
+         Parameters：
+
+              -f：函数名称
+
+              -n：删除指定的变量。变量实际上并未删除，只是不会输出到后续指令的执行环境中。
+
+              -p：列出所有shell程序所赋的环境变量
+
+              例：export -n [NAME]
+```
+      
+6、pwd
+```
+功能为显示当前目录位置。
+```
+       
+7、history
+```
+显示用户历史输入命令包括history本身。
+       historyN：latest Nrecords
+       Parameters:
+       -c:将目前shell中所有的history内容全部删除
+       -doffset：删除指定位置的某条记录
+       -a：将目前新增的history指令追加至历史文件中，若目录不存在，则预设写入~/.bash_history
+       -r：将历史文件中的内容读入到当前shell的history里。
+       -n：则将.bash_history文件中的记录追加到当前登录终端的历史记录中。
+       -w：将目前的history记忆内容写入历史文件中。
+```
+       
+8、shutdown
+```
+功能不再赘述，命令格式如下：
+       shutdown[OPTIONS][-t SECONDS][TIME][ALERT]
+       PARAMETERS:
+       -C：当执行"shutdown -h 12:12"指令时，只要按+键就可以中断关机指令   
+       -h：将系统关机
+       -k：只发消息，不会关机
+
+       -n：不调用init程序进行关机，有shutdown自己执行
+
+       -r：shutdown之后重启
+
+       -t<sec>：送出警告信息和删除信息之间的延迟时间
+
+       TIME:指定时间关机
+
+       ALERTInfo：传送给所有的登入用户信息
+```
+
+9、poweroff
+```
+同上，命令格式如下：
+
+       poweroff[OPTIONS]
+
+       PARAMETERS:
+
+       -p：（or only poweroff）:关闭系统并切断电源。
+
+       -halt：画面停止，关闭系统。
+
+       -reboot：重启
+```
+
+10、reboot
+```
+重启命令
+```
+
+11、hwclock
+```
+显示或设置硬件时钟，格式如下：
+
+       hwclock[function][option]
+
+       PARAMETERS：
+
+       -s：--hctosys：将硬件时钟设置为系统时间
+
+       -w，--systohc：将系统时钟设置为硬件时钟
+```
+
+12、date
+```
+显示和设置系统时间，命令格式如下：
+
+        date[-u] [-d datestr] [-s datestr] [--utc] [--universal] [--date=datestr][--set=datestr] [--help] [--version] [+FORMAT] [MMDDhhmm[[CC]YY][.ss]]
+
+标记列表如下:
+
+Time：
+
+    % : 印出
+       %n : 下一行
+       %t : 跳格
+       %H : 小时(00..23)
+       %I : 小时(01..12)
+       %k : 小时(0..23)
+       %l : 小时(1..12)
+       %M : 分钟(00..59)
+       %p : 显示本地 AM 或 PM
+       %r : 直接显示时间 (12 小时制，格式为hh:mm:ss [AP]M)
+       %s : 从 1970 年 1 月 1 日 00:00:00 UTC 到目前为止的秒数 %S : 秒(00..61)
+       %T : 直接显示时间 (24 小时制)
+       %X : 相当于 %H:%M:%S
+       %Z : 显示时区
+
+    Day&Date：
+
+    %a : 星期几 (Sun..Sat)
+    %A : 星期几(Sunday..Saturday)
+    %b : 月份 (Jan..Dec)
+    %B : 月份(January..December)
+    %c : 直接显示日期和时间
+    %d : 日 (01..31)
+    %D : 直接显示日期(mm/dd/yy)
+    %h : 同 %b
+    %j : 一年中的第几天(001..366)
+    %m : 月份 (01..12)
+    %U : 一年中的第几周(00..53) (以 Sunday 为一周的第一天的情形)
+    %w : 一周中的第几天 (0..6)
+    %W : 一年中的第几周(00..53) (以 Monday 为一周的第一天的情形)
+    %x : 直接显示日期(mm/dd/yy)
+    %y : 年份的最后两位数字(00.99)
+    %Y : 完整年份(0000..9999)
+```
+
+
+##三、获取命令帮助。
+
+```
+1.帮助文档通常被放在/user/share/man目录下，使用type COMMAND可判断该命令类型，若为内部命令，则使用help获取
+
+2.使用man COMMAND命令。man文件根据描述内容功能不同，通常分为八种：
+
+man 1：所有用户可以使用的命令
+
+man 2：系统内核调用，不是每个命令都有系统调用（如：man 2 read）
+
+man 3：一些常用第函数与函数库，大部分为C的函数库（libc）；
+
+man 4：特殊文件，如：/dev/tty1
+
+man 5：配置文件或某些文件的格式；
+
+man 6：游戏相关；
+
+man 7：惯例与协议等杂项；
+
+man 8：管理员命令，如：fdisk；
+
+Tips：注manual 手册是分章节的；man # Command （#表示章节号）
+
+```
+
+##四、常用的文件管理命令
+
+```
+ls、cat、cp、mv、more、less、tac、head、tail、mkdir、rmdir、rm, etc
+
+```
+```
+1、ls：查看文件列表命令，使用格式：
+
+ls [OPTIONS] /PATH
+
+常用选项：
+
+-l：查询文件列表文件类型、字节大小、属主属组修改时间登详细信息；
+
+-a：显示目录中以“.”号开头的隐藏文件；
+
+-A：功能和a相同只是不会在显示“.”和“..”目录；
+
+--color[=WHEN]：显示文件列表时可以根据文件类型标志不同的颜色，一般使用--color=auto；
+
+-d：只显示要查询目录自身；
+
+-h：与-l选项同时使用以易读的方式显示文件大小（K,M,G）；
+
+-i：显示文件inode号码；
+
+-t：以文件修改时间倒序显示；
+
+-S：以文件大小来倒序显示；
+
+-r：将显示顺序反向显示；
+
+```
+示例：
+(1) 查看/etc目录下的所有文件？
+
+```
+~]# ls /etc
+```
+
+(2) 查看/etc目录下文件的权限属主属组等信息？
+
+```
+~]# ls -l /etc
+```
+
+(3) 查看/etc目录下的文件列表，以文件大小排序？
+
+```
+~]# ls -lS /etc
+```
+
+(4) 查看/etc/目录下的文件列表，并以文件修改时间排序？
+
+```
+~]# ls -lt /etc
+```
+
+（5）查看/etc目录下文件inode号？
+
+```
+~]# ls -li /etc
+```
+ 
+2、cat：查看文件内容将其输出至屏幕，使用格式：
+
+```
+cat [OPTION]... [FILE]...
+
+```
+
+常用选项：
+
+```
+-n：对输出所有行进行编号；
+
+-b：对非空输出行编号；
+
+-s：对连续的空行忽略输出；
+
+-E：在每行结束处显示$；
+
+Linux系统默认换行符为LF($)，windows下为CRLF(^M$)；
+
+-T：将制表符显示为^I；
+
+-A：等价于vET
+
+```
+
+3、more：可以分屏显示，cat则堆积到屏幕上
+
+使用格式：
+
+```
+more [options] file [...]
+
+```
+
+more一般常用的就是后直接加文件名来使用，翻页的快捷键有：
+SPACE：向下翻一页；
+F：向下翻一屏；
+b：向上翻一页；
+/关键字：在文本中查找输入的内容；
+ENTER：一行一行的翻；
+需要注意的是，当文件翻到尾部的时候会直接退出。
+
+4、less：less的用法基本与more一致，只是相关的快捷键会多一些，更重要的一点是在文件尾部时不会自动退出，这个其实很实用。
+格式：less file
+快捷键：
+
+```
+PageDown，space：向下翻一页；
+PageUp：向上翻一页；
+/关键字：向下查找；
+？关键字：向上查找；
+n：与查找的方向相同，查看下一个匹配内容；
+N：与查找方向相反；
+q：退出less模式；
+```
+
+5、tac：tac应该与cat放在一起解释比较好，tac的功能与cat一致，只不过显示的内容顺序正好相反，原来cat的第一行在tac中显示为最后一行。
+
+6、head：获取文件指定前多少行内容。
+格式：head [-n numbers] file
+   常用选项：
+-n：后面接数字，代表显示多少行内容；
+注意：如果不加-n # ，head默认显示为10行。
+示例：显示/etc/passwd前7行的用户信息？
+
+```
+~]# head -n 7 /etc/passwd。
+
+```
+ 
+7、tail：与head功能相反，是显示文件从尾部开始向前多少行的内容，默认显示后10行。
+格式：tail [-n numbers] file
+   示例：显示/etc/passwd后6行的用户信息？
+
+```
+~]# tail -n 6 /etc/passwd
+```
+tail还有一个比较重要的用法就是，可以追踪指定的文本文件改动情况。
+使用方法：tail -f file
+示例：查看文件/tmp/tail.txt文件的内容修改情况？
+
+```
+~]# tail -f /tmp/tail.txt
+```
+
+这时如果在另一个终端向tail.txt文件中写入数据的时候，打开tail -f的那个终端就会显示文件的改动。
+取消文件追踪使用Ctrl+c即可。
+
+8、cp：对文件或目录进行拷贝命令。
+格式：
+
+```
+cp [option] ... SOURCE DEST
+cp [option] ... SOURCE... DIRECTORY
+cp [option] ... -t DIRECTORY SOURCE...
+常用选项：
+-r,R：如果源文件是目录的话，需要通过-R选项来递归复制；
+-v,--verbose：可以显示复制过程情况；
+-p：等同于“--preserve=mode,ownership,timestamps”，复制源文件时保留其权限、属主属组、时间戳，如果源文件是链接则会把源文件所指向的文件内容一并复制到目标位置，不会生成链接；
+```
+示例：/tmp/link 文件是/tmp/script/test.sh的链接文件，将其复制到/tmp/test目录下：
+
+```
+~]# cp -p /tmp/link /tmp/test
+```
+
+此时test目录下生成的是一个与/tmp/script/test.sh拥有相同权限、属主属组和时间戳的普通文件，而不再是链接文件，这个就是-p选项的用处；
+
+```
+-P：等同于“--no-dereference”，复制源文件时，如果源文件是链接，则直接复制链接本身而不会去复制链接文件所指向的文件；
+-i：复制到目标位置如果目标位置有内容，则会提示用户是否进行覆盖操作；
+-d：等同于“--no-dereference--preserve=links”若源文件为链接文件的属性，则复制链接文件属性而非链接文件的源文件本身；
+-f：忽略已存在文件直接强制覆盖（此功能慎用！！）；
+-a：等同于“-dR--preserve=all”，是一个归档类选项，可以将所有源文件的元数据、文件内容统统复制到目标文件当中，此选项常用！
+```
+注意：如果源文件是目录或者多个源文件的话，目标文件也必须是目录否则操作失败！
+
+9、mv：移动文件命令；
+格式：
+
+```
+mv [option] ... SOURCE DEST
+mv [option] ... SOURCE... DIRECTORY
+常用选项：
+-f：强制覆盖移动，与cp命令-f相同；
+-i：交互式操作，只在目标位置存在源文件时会提示；
+-v：显示操作状态；
+```
+
+10、mkdir：创建文件夹命令。
+格式：
+
+```
+mkdir [option]... DIRECTORY...
+```
+
+常用选项：
+
+```
+-m，--mode=MODE：创建目录时可以同时使用此选项来为此设定权限，而不使用默认目录权限，默认目录权限为755；
+示例：创建/tmp/mktest目录，指定其权限为属主可读可写可执行，属组可读可执行，其他没有权限
+~]# mkdir -p -m 750 /tmp/mytest
+-p，--parents：创建目录时如果上层目录不存在则使用此选项来逐级创建目录；
+-v：显示创建目录状态；
+示例：在/tmp目录下创建test/test_a目录
+~]# mkdir -pv /tmp/test/test_a
+```
+
+11、rmdir：删除目录命令，这个命令用的不多，较常用的下面的rm命令。
+格式：
+
+```
+rmdir [option] ... DIRECTORY...
+```
+ 
+12、rm：删除文件或目录命令，用处非常广。
+格式：
+
+```
+rm [optioon] ... FILE...
+```
+
+常用选项：
+
+```
+-f：强制删除操作
+-i：交互式操作选项
+-r，-R：递归删除操作，针对目录来操作，
+-d：删除空目录的选项；
+-v：显示详细信息；
+```
+
+示例：删除/tmp目录下的test目录，如果目录不为空强制删除？
+
+```
+~]# rm -rf /tmp/test
+```
+ 
+##五、bash的工作特性
+在Windows系统中，我们最常用的是使用图形界面完成性能的使用。有时候我们也会使用dos命令来执行一些指令，其中dos就是一个文本模式操作界面，我们通过一些dos指令，这些指令通过与Windows系统的内核进行交互来完成一些操作。例如dir指令类似与Linux中的ls指令。我们在这里使用的dos命令行就类似与Linux的bash shell环境。
+bash是Bourne Again Shell 的简称，是从unix系统中的sh发展而来，是用户和Linux内核交互的工具，用户通过bash操作内核来完成系统的使用和管理。
+一般在bash中运行一些命令时，多数情况下会返回一些执行的情况，比如执行ls命令成功后会在屏幕上输出所查询到的文件列表。其实除了正常返回的一些信息之外，bash还会记录运行该命令时的一些状态信息，查询该状态的方法就是在终端输入“echo $?”来查看上一条命令成功与否。
+在Linux bash中可以使用命令行展开特性一步完成需要分开成多步完成的操作，达到事半功倍的效果。在Linux指令参数位置使用"{}"将相应的参数括起来,括号中的参数以逗号分隔，然后bash在执行这一指令时会自动将括号中的内容进行展开。
+
+##六、HOMEWORK
+
+1. (1)、创建/tmp目录下的：a_c, a_d, b_c, b_d
+
+
+[](http://s5.51cto.com/wyfs02/M02/8B/A5/wKiom1hTk3rBbBxjAABAA0sbyGM471.jpg)
+
+  (2)、创建/tmp/mylinux目录下的：
+
+```
+mylinux/
+
+├── bin
+
+├── boot
+
+│ └── grub
+
+├── dev
+
+├── etc
+
+│ ├── rc.d
+
+│ │ └── init.d
+
+│ └── sysconfig
+
+│ └── network-scripts
+
+├── lib
+
+│ └── modules
+
+├── lib64
+
+├── proc
+
+├── sbin
+
+├── sys
+
+├── tmp
+
+├── usr
+
+│ └── local
+
+│ ├── bin
+
+│ └── sbin
+
+└── var
+
+├── lock
+
+├── log
+
+└── run
+
+```
+[](http://s5.51cto.com/wyfs02/M00/8B/A2/wKioL1hTk52CSlvjAABl18dzn3U925.jpg)
+
+ 
+
+2.文件的元数据信息有哪些，分别表示什么含义，如何查看？如何修改文件的时间戳信息。
+
+元数据指用来描述一个文件的特征的系统数据，诸如访问权限、文件属主属组以及文件数据块的分布信息(inode...)等等。
+
+在终端下使用stat命令可以查看一个文件元数据的详细信息。
+
+例如以/tmp/a这个文件为例
+
+
+```
+stat /tmp/grub2.cfg
+
+```
+```
+
+       -:表示该文件为普通文件；
+
+       r：表示该文件可读；
+
+       w：表示该文件可写；
+
+       x：表示该文件可执行；
+
+       当前grub2.cfg这个文件权限表示属主有可读写权限，而属组和其他用户只有读权限；
+
+       Uid：表示当前文件属主ID；
+
+       Gid：表示当前文件属组GID；
+
+       atime：表示最近访问时间；
+
+       mtime：表示最近修改时间；
+
+       ctime：这个时间比较特殊，一般情况下不管对文件内容还是元数据做修改，这个   时间一定会发生改变，这个就表示最近文件改动时间；
+```
+
+       如果要修改文件时间戳则使用touch +文件名 来执行操作。
+
+       示例：
+
+       （1）修改grub2.cfg文件的访问时间为当前时间。
+
+[](http://s1.51cto.com/wyfs02/M02/8B/A2/wKioL1hTk7fQqpxNAAAMdVhqYyI159.jpg)
+
+       （2）修改grub2.cfg文件的修改时间为2012年12月12日 12点12分12秒。
+
+[](http://s2.51cto.com/wyfs02/M01/8B/A5/wKiom1hTk8nxm2AnAAAVtFtd7FM462.jpg)
+
+ 
+
+3.显示/var目录下所有以l开头，以一个小写字母结尾，且中间至少出现一位数字（可以有其它字符）的文件或目录。
+
+[](http://s3.51cto.com/wyfs02/M01/8B/A2/wKioL1hTk-HDYu8tAAAYnDz0rYE054.jpg)
+
+ 
+
+4.显示/etc目录下，以任意一个数字开头，且以非数字结尾的文件或目录。
+
+[](http://s5.51cto.com/wyfs02/M00/8B/A2/wKioL1hTk_HSGQ2yAAAT5a4wqUY524.jpg)
+
+ 
+
+5.显示/etc目录下，以非字母开头，后面跟了一个字母以及其它任意长度任意字符的文件或目录。
+
+[](http://s5.51cto.com/wyfs02/M01/8B/A5/wKiom1hTlAGB_CADAAAa-cvXeYQ690.jpg)
+
+ 
+
+6.在/tmp目录下创建以tfile开头，后跟当前日期和时间的文件，文件名形如：tfile-2016-09-20-09-32-22。
+
+[](http://s5.51cto.com/wyfs02/M01/8B/A2/wKioL1hTlA_BNU-BAAA5n8fU2Tk083.jpg)
+
+Tips：$(date +%Y%m%d)的date命令跟后面日期格式的+号之间有一个空格！
+
+ 
+
+7.复制/etc目录下所有以.d结尾的文件或目录至/tmp/mytest2目录中。
+
+[](http://s4.51cto.com/wyfs02/M00/8B/A5/wKiom1hTlB7zISeOAAAt8mz91xU232.jpg)
+
+ 
+
+8.复制/etc/目录下所有以l或m或n开头，以.conf结尾的文件至/tmp/mytest2目录中。
+
+[](http://s1.51cto.com/wyfs02/M00/8B/A2/wKioL1hTlEahvFB-AAAZ6L5XJmo209.jpg)

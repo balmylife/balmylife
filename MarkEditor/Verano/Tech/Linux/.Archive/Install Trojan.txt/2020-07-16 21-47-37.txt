@@ -1,0 +1,73 @@
+---
+date: 2020-03-15 15:25
+layout: 'post'
+status: 'public'
+---
+
+##一、搭建流程简述
+1. 安装系统，版本要求例 Centos>=7，更高版本内核可直接开启bbr无需升级。
+2. 域名解析，购买域名解析到指定IP，等待生效。
+3. Trojan CODE
+     `wget -N --no-check-certificate -q -O trojan_install.sh "https://raw.githubusercontent.com/V2RaySSR/Trojan/master/trojan_install.sh" && chmod +x trojan_install.sh && bash trojan_install.sh`
+4. 绑定已生效域名（脚本自动续签https证书）。(Auto)
+5. 自动配置伪装站点（目录 usr/share/nginx/html，可自行替换内容）。（Auto）
+
+##二、BBR 加速
+1. BBR CODE
+ `wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh`
+2. 输入 y 重启服务器
+3. 输入 uname -r ，验证是否成功安装最新内核并开启 BBR 加速
+
+##三、开启防火墙、开启端口、设置Trojan开机启动
+1. 防火墙服务 
+```
+启用」systemctl start  firewalld.service
+关闭』systemctl stop  firewalld.service
+重启」systemctl restart  firewalld.service
+
+开机启用』systemctl enable firewalld.service
+开机禁用」systemctl disable firewalld.service
+
+查看服务状态』systemctl status firewalld.service
+是否开机启用」systemctl  is-enabled  firewalld.service
+
+已经启用列表』systemctl list-unit-files|grep enabled
+启用失败列表」systemctl  --failed
+```
+
+2. 配置防火墙
+```
+查看版本』firewall-cmd --version
+」firewall-cmd  --help
+』firewall-cmd --state
+」firewall-cmd --zone=public --list-ports
+』firewall-cmd --reload
+」firewall-cmd --get-active-zones
+』firewall-cmd --get-zone-of-interface=eth0
+」firewall-cmd --panic-on
+』firewall-cmd --panic-off
+」firewall-cmd --query-panic
+』firewall-cmd --zone=public --add-port=80/tcp --permanent   
+」firewall-cmd --zone=public --query-port=80/tcp 
+』firewall-cmd --zone=public --remove-port=80/tcp --permanent 
+```
+3. httpd服务
+```
+启用』systemctl   start    httpd
+停止」systemctl   stop     httpd
+重启』systemctl   restart  httpd
+```
+
+
+##四、客户端
+1. [MAC](https://github.com/JimLee1996/TrojanX/releases)
+2. IOS 使用大陆地区外的AppleID下载Shadowrocket（付费）
+3. [Windows](https://github.com/mellow-io/mellow)
+4. [Android](https://github.com/trojan-gfw/igniter/releases)
+
+##五、Chrome SwitchyOmega插件
+1. [插件下载](https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif)
+2. 配置规则   
+    - 规则1：https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
+    - 规则2：https://raw.githubusercontent.com/atrandys/proV/master/fgfwlist.txt
+>二选一即可,其他软件需单独配置的，要求支持Socks5，直接指向127.0.0.1：1080即可

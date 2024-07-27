@@ -1,0 +1,104 @@
+html
+	head
+		
+		+h.headers
+		block title
+			title= post.title or site.title
+		+h.load('/fb_static/lib/pure.css')
+		+h.load('/fb_static/lib/markdown/basic.css')
+		+h.load("/template/static/style.scss")
+		+h.load("/template/static/snowy.html")
+
+	body
+		block header
+			#nav_header
+				+site.get_nav(align="right", toggle_menu=True)
+	
+		block content
+		+h.back_to_top()
+		+h.load("/fb_static/lib/jquery.js")
+		+h.load('font')
+
+		///全局背景音乐
+		///audio(autoplay='yes')
+  			///source(src='https://inz.oss-cn-beijing.aliyuncs.com/Audios/320kbit/%E6%9C%A8%E6%9D%91%E5%BC%93%20-%20%E3%81%84%E3%81%A4%E3%82%82%E4%BD%95%E5%BA%A6%E3%81%A6%E3%82%99%E3%82%82.mp3')
+
+		
+///hr.space
+script(async='', src='//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js')
+.footer
+	span.visitors
+		span#busuanzi_container_site_pv
+		  | 总访问量
+		  span#busuanzi_value_site_pv
+			i.fa.fa-spinner
+		  | 次
+		span#busuanzi_container_site_uv
+		  | 访客数
+		  span#busuanzi_value_site_uv
+			i.fa.fa-spinner
+		  | 人次
+		span#sitetime
+		
+	///显示建站时间的地方放置此代码 可以加上其他代HTML代码加粗颜色等
+	span.elapsedtime
+	script(language='javascript').	
+		function siteTime(){
+		var seconds = 1000;
+		var minutes = seconds * 60;
+		var hours = minutes * 60;
+		var days = hours * 24;
+		var years = days * 365;
+		var today = new Date();
+		var todayYear = today.getFullYear();
+		var todayMonth = today.getMonth()+1;
+		var todayDate = today.getDate();
+		var todayHour = today.getHours();
+		var todayMinute = today.getMinutes();
+		var todaySecond = today.getSeconds();
+		///此处填写建站时间 依次为 年,月,日,时,分,秒注意格式 半角,
+		var t1 = Date.UTC(2016,06,06,12,00,00);  
+		var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+		var diff = t2-t1;
+		var diffYears = Math.floor(diff/years);
+		var diffDays = Math.floor((diff/days)-diffYears*365);
+		var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+		var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+		var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+		///add a zero in front of numbers which<10
+		function checkTime(i)
+		{
+		if (i<10)
+		{
+		i="0" + i
+		}
+		return i
+		}
+		diffYears=checkTime(diffYears);
+		diffDays=checkTime(diffDays);
+		diffHours=checkTime(diffHours);
+		diffMinutes=checkTime(diffMinutes);
+		diffSeconds=checkTime(diffSeconds);
+		///行宽度不随着数字宽度变化而变化
+		///var dateBox = document.createElement('div')
+		///dateBox.style.display='inline-block'
+		///datebox.style.innerHTML=“测试”
+		document.getElementById("sitetime").innerHTML='\xa0'+'|'+'\xa0'+ " 已开通 "+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟<div style='display:inline-block;width:28px;'>"+diffSeconds+"</div>秒\xa0"; 
+		setTimeout("siteTime()", 1000);
+		};
+		siteTime();
+		
+	.refresh
+		///i.fa.fa-cog.fa-spin
+		i.fa.fa-refresh.fa-spin
+
+	p.copyright
+	  | © 
+	  script.
+		  document.write("2016 ￚ " + new Date().getFullYear() + '\xa0' + '·');
+	  a(href='https://balmy.life', target='_self') 雨浥轻尘
+	  |  · All Rights Reserved 
+
+
+	
+		

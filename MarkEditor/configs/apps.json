@@ -1,0 +1,7 @@
+{
+    "waterfall_album_sort":"-date",
+    "waterfall_index_sort":"-date",
+    "waterfall_index_doc_type":"folder+image",
+    "waterfall_album_doc_type":"folder+image",
+    "dashboard_time":1605134293787
+}

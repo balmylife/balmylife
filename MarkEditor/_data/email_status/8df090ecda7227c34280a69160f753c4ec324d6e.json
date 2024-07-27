@@ -1,0 +1,28 @@
+{
+    "status": "ok", 
+    "mail_id": "01000175fe5189e7-1e5b895f-0386-47f4-b9a5-a6fc82ffed2a-000000", 
+    "raw": true, 
+    "sender": "Bitcron Mail <bee@bitcron.com>", 
+    "node_ip": "192.95.36.177", 
+    "doc_uuid": "8df090ecda7227c34280a69160f753c4ec324d6e", 
+    "original_mail_id": "p00epan6iihnakabmspmnf2u2nqbrj2m796dto01", 
+    "content": "Mime-Version: 1.0\nContent-Type: multipart/alternative;\n boundary=\"----=_NextPart_5FBE0887_1163E9B8_439182EB\"\nContent-Transfer-Encoding: 8Bit\nSubject: balmy <refer:_inbox/2020-11/2020-11-25 15-32-36.md>\n <from:balmylife@qq.com>\nTo: <balmylife@126.com>\n\nThis is a multi-part message in MIME format.\r\n\n------=_NextPart_5FBE0887_1163E9B8_439182EB\nContent-Type: text/plain;\r\n\tcharset=\"gb18030\"\nContent-Transfer-Encoding: base64\n\nbGlmZQ==\r\n\n------=_NextPart_5FBE0887_1163E9B8_439182EB\nContent-Type: text/html;\r\n\tcharset=\"gb18030\"\nContent-Transfer-Encoding: base64\n\nPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNo\r\nYXJzZXQ9R0IxODAzMCI+PGRpdj5saWZlPC9kaXY+\r\n\n------=_NextPart_5FBE0887_1163E9B8_439182EB--\n\r\n", 
+    "cloud_file_date": {
+        "$date": 1606289558174
+    }, 
+    "date": {
+        "$date": 1606289558174
+    }, 
+    "title": "balmy", 
+    "delivery_status": {
+        "remoteMtaIp": "220.181.15.154", 
+        "recipients": [
+            "balmylife@126.com"
+        ], 
+        "timestamp": "2020-11-25T07:32:50.465Z", 
+        "smtpResponse": "250 Mail OK queued as mx37,0cmowABnjaqWCL5f+3_2CQ--.30865S3 1606289570", 
+        "reportingMTA": "a48-116.smtp-out.amazonses.com", 
+        "processingTimeMillis": 12474
+    }, 
+    "to": "balmylife@126.com"
+}

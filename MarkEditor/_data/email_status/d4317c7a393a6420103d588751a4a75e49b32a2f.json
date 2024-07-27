@@ -1,0 +1,28 @@
+{
+    "status": "ok", 
+    "mail_id": "0100017741a4ef97-6b951a0f-9605-4f45-b8db-0731c73323a2-000000", 
+    "raw": true, 
+    "sender": "Bitcron Mail <bee@bitcron.com>", 
+    "node_ip": "192.95.36.177", 
+    "doc_uuid": "d4317c7a393a6420103d588751a4a75e49b32a2f", 
+    "original_mail_id": "iqv0ut4b02rff20amj0k5l7qto7k92n521dchtg1", 
+    "content": "Mime-Version: 1.0\nContent-Type: multipart/alternative;\n boundary=\"----=_NextPart_6010CE03_0FACC9A0_168CBD4E\"\nContent-Transfer-Encoding: 8Bit\nSubject: tm <refer:_inbox/2021-01/2021-01-27 10-21-03.md>\n <from:balmylife@qq.com>\nTo: <balmylife@126.com>\n\nThis is a multi-part message in MIME format.\r\n\n------=_NextPart_6010CE03_0FACC9A0_168CBD4E\nContent-Type: text/plain;\r\n\tcharset=\"gb18030\"\nContent-Transfer-Encoding: base64\n\nbWVzc2FnZQ==\r\n\n------=_NextPart_6010CE03_0FACC9A0_168CBD4E\nContent-Type: text/html;\r\n\tcharset=\"gb18030\"\nContent-Transfer-Encoding: base64\n\nPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNo\r\nYXJzZXQ9R0IxODAzMCI+PGRpdj5tZXNzYWdlPC9kaXY+\r\n\n------=_NextPart_6010CE03_0FACC9A0_168CBD4E--\n\r\n", 
+    "cloud_file_date": {
+        "$date": 1611714064423
+    }, 
+    "date": {
+        "$date": 1611714064423
+    }, 
+    "title": "tm", 
+    "delivery_status": {
+        "remoteMtaIp": "220.181.15.193", 
+        "recipients": [
+            "balmylife@126.com"
+        ], 
+        "timestamp": "2021-01-27T02:21:11.605Z", 
+        "smtpResponse": "250 Mail OK queued as mx13,wcmowADneeMSzhBgLFkuEg--.26135S3 1611714071", 
+        "reportingMTA": "a8-42.smtp-out.amazonses.com", 
+        "processingTimeMillis": 7326
+    }, 
+    "to": "balmylife@126.com"
+}

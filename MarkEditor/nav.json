@@ -1,0 +1,13 @@
+{
+    "nav_configs": [
+        {
+            "url": "/", 
+            "name": "\u9996\u9875"
+        }, 
+        {
+            "url": "/about", 
+            "name": "\u5173\u4e8e"
+        }
+    ], 
+    "user_nav_disabled": false
+}

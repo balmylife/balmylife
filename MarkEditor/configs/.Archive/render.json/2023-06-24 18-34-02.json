@@ -1,0 +1,16 @@
+{
+    "dashboard_time":1615093736745,
+    "debug_template":false,
+    "comments_type":"tree",
+    "theme":"",
+    "gravatar":false,
+    "routes":[
+        {
+            "route_root":"album",
+            "route_url":"album",
+            "route_theme":"Album\/waterfall"
+        }
+    ],
+    "auto_reload":false,
+    "hide_comments":false
+}
